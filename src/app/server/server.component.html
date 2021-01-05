@@ -1,0 +1,6 @@
+
+  <section [ngStyle]='{backgroundColor: getColor()}'
+  [ngClass]= "{'online-class-rule': serverStatus === 'online'}"
+  class="app-server"><h1>Server Component</h1>
+  <p>{{'Server (written with string interpolation with string in the middle)'}} with ID {{serverId}} is {{getServerStatus()}}</p></section>
+

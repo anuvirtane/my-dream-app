@@ -1,0 +1,32 @@
+<section class="app-servers">
+  <label>Server name</label>
+  <!--<input
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)"
+  /> -->
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName"
+  />
+  <p
+
+    [innerHTML]="propertyBindingTest"></p>
+
+  <button
+    class="btn btn-primary"
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()"
+  >
+    Add Server
+  </button>
+  <hr>
+  <!--<p>{{ serverName | uppercase }}</p> -->
+  <!--<p>{{ serverCreationStatus }}</p> -->
+  <p *ngIf="serverCreated">Server was created! Server name is {{ serverName }}</p>
+
+<!--ngFor : "Listaa servereitä niin monta kertaa kuin niitä on servers arrayssa (määritelty ts-tiedostossa)" -->
+  <app-server *ngFor="let s of servers"></app-server>
+
+</section>
